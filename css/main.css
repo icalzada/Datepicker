@@ -1,0 +1,87 @@
+.caret{
+	display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;	
+}
+
+.btn{
+	display: block;
+    width: 150px;
+    padding: 6px 12px;
+    margin: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #EEE;
+    color: #337ab7;
+}
+
+.btn:hover, .active{
+	background-color:#337ab7;
+	color: #FFF;
+	border: none;	
+}
+
+.aceptar{
+	background-color: #5CB85C;	
+	color: #FFF;
+}
+
+.aceptar:hover{
+	background-color: #3C983C;	
+}
+
+.day{
+	font-weight: 200;
+}
+
+.opciones{
+	float: left;
+}
+
+.form-control{
+	display: block;
+    width: 150px;
+    margin: 8px 12px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.range-start {
+	border-radius: 5px 0px 0px 5px !important;
+}
+
+.range-end{
+	border-radius: 0px 5px 5px 0px !important;	
+}
+
+.range-start.range-end{
+	border-radius: 5px !important;	
+}
