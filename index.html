@@ -1,34 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en-us">
 <head>
-	<meta charset="utf-8">
-    <title>Calendario</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script></script>
-    <script src="js/locales/bootstrap-datepicker.es.min.js"></script></script>
-    <script type="text/javascript" src="js/main.js"></script>
+  <meta charset="utf-8">
+  <title>Datepicker example</title>
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <script src="js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" href="css/multidaterangepicker.css">
+  <script src="js/multidaterangepicker.js"></script>
+  <style>
+    .example-caret{
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      vertical-align: middle;
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent; 
+    }
+    .example-date{
+      background: #fff;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+
+      var dates;
+
+      $("#date").multidaterangepicker({
+        weekStart: 0,
+        format: "MM dd, yyyy",
+        startDate: "today",
+        daysOfWeekDisabled: [0]
+      });
+
+      $('#multidaterangepicker').on("getDates", function(e, eventInfo){
+        dates = eventInfo.dates;
+      });
+
+    });
+
+  </script>
 </head>
-<body style="font-family: Helvetica Neue,Helvetica,Arial,sans-serif">
-    <div id="date" class="" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc;">
-    	<span>Date</span> <b class="caret"></b>
-    </div>
-    
-    <div id="calendario" class="calendario" hidden="true">
-        <div class="opciones">
-            <button class="btn" id="btnEspecifica">Fecha especifica</button>
-            <button class="btn" id="btnRango">Rango de fechas</button>
-            <button class="btn" id="btnMultiple">Fechas multiples</button>
-            
-            <input type="button" class="actual_range form-control" id="fechaInicio" placeholder="Inicio"></label>
-            <input type="button" class="actual_range form-control" id="fechaFin" placeholder="Fin"></label>
-            <button class="btn aceptar" id="btnAceptar">Aceptar</button>
-        </div>
-        <div id="sandbox-container1"></div>
-        <div id="sandbox-container2"></div>
-        <div id="sandbox-container3"></div>
-    </div>
-   
+<body style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif">
+  <div id="date" class="example-date">
+    <span>Date </span><b class="example-caret"></b>
+  </div>
+  <!--<div id="multidaterangepicker"></div>-->
 </body>
 </html>
