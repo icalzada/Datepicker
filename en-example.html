@@ -29,17 +29,16 @@
   <script>
     $(document).ready(function() {
 
-      var dates;
-
       $("#date").multidaterangepicker({
         weekStart: 0,
-        format: "MM dd, yyyy",
         startDate: "today",
-        daysOfWeekDisabled: [0]
+        daysOfWeekDisabled: [0],
+        language: "en",
+        format: 'mm/dd/yyyy'
       });
 
-      $('#multidaterangepicker').on("getDates", function(e, eventInfo){
-        dates = eventInfo.dates;
+      $('#date').on("getDates", function(e, eventInfo){
+         console.log(eventInfo);
       });
 
     });
@@ -50,6 +49,5 @@
   <div id="date" class="example-date">
     <span>Date </span><b class="example-caret"></b>
   </div>
-  <!--<div id="multidaterangepicker"></div>-->
 </body>
 </html>

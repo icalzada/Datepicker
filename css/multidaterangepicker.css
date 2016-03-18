@@ -45,11 +45,11 @@
 .mdpr-form-control{
   display: block;
   width: 150px;
-  margin: 8px 12px;
+  margin: 8px 10px;
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.5;
-  color: #000;
+  color: #ddd;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -58,6 +58,10 @@
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.mdpr-active-form-control{
+  color: #337ab7 !important;
 }
 
 .mdpr-dropdown{
@@ -71,18 +75,6 @@
   border: 1px solid rgba(0,0,0,0.15);
   box-shadow: 0 6px 12px rgba(0,0,0,0.175);
   background-clip: padding-box;
-}
-
-.range-start {
-  border-radius: 5px 0px 0px 5px !important;
-}
-
-.range-end{
-  border-radius: 0px 5px 5px 0px !important;  
-}
-
-.range-start.range-end{
-  border-radius: 5px !important;  
 }
 
 .day{

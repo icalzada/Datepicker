@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Datepicker example</title>
+  <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+  <script src="js/bootstrap-datepicker.js"></script>
+  <link rel="stylesheet" href="css/multidaterangepicker.css">
+  <script src="js/multidaterangepicker.js"></script>
+  <style>
+    .example-caret{
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      vertical-align: middle;
+      border-top: 4px solid;
+      border-right: 4px solid transparent;
+      border-left: 4px solid transparent; 
+    }
+    .example-date{
+      background: #fff;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script>
+    $(document).ready(function() {
+
+      $("#date").multidaterangepicker({
+        weekStart: 0,
+        startDate: "today",
+        daysOfWeekDisabled: [0],
+        language: "es",
+        format: 'dd/mm/yyyy'
+      });
+
+      $('#date').on("getDates", function(e, eventInfo){
+         console.log(eventInfo);
+      });
+
+    });
+
+  </script>
+</head>
+<body style="font-family: Helvetica Neue, Helvetica, Arial, sans-serif">
+  <div id="date" class="example-date">
+    <span>Fecha </span><b class="example-caret"></b>
+  </div>
+</body>
+</html>
