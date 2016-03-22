@@ -35,7 +35,7 @@
   var button = 1;
   
   var startRange = false;
-  var actualizar = false;
+  var update = false;
 
   var divMdpr = $('<div id="multidaterangepicker" class="mdpr-dropdown"></div>');
   var divOptions = $('<div class="mdpr-options"></div>');
@@ -249,13 +249,13 @@
 
   divRange.on("changeDate", function(e) {
     dates = $(this).datepicker('getFormattedDate');
-    if(!actualizar){
+    if(!update){
       if(!startRange){
         startRange = true;
         inputStartDate.removeClass('mdpr-active-form-control');
         inputEndDate.addClass('mdpr-active-form-control');
         divRange.datepicker('setStartDate', dates);
-        actualizar = true;
+        update = true;
         divRange.datepicker('setDate', dates);
       }else{
         startRange = false;
@@ -271,12 +271,12 @@
         spanDate = $('<span id="resultDates"></span>');
         spanDate.append(datesArray.dates[0] + " - " + datesArray.dates[1]);
         div.append(spanDate);
-        actualizar = true;
+        update = true;
         divRange.datepicker('clearDates');
         divRange.datepicker('setStartDate',settings.startDate);
       }
     }else{
-      actualizar = false;
+      update = false;
     }
   });
 
